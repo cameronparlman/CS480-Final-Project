@@ -38,7 +38,6 @@ body {
 body {
   color: #fff;
   text-align: left;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -54,6 +53,8 @@ body {
   padding-top: 40px;
   display: table-cell;
   vertical-align: top;
+  font-family: 'Karla', sans-serif;
+  text-shadow: 0 4px 4px rgba(0,0,0,1);
 }
 
 
@@ -63,10 +64,12 @@ body {
  */
 .masthead-brand {
   font-size: 350%;
+  font-family: 'Karla', sans-serif;
+  text-shadow: 0 3px 4px rgba(0,0,0,1);
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 20px;
-  text-shadow: 2px 2px #bbbbbb;
+  adow: 2px 2px #bbbbbb;
 }
 
 .masthead-nav > li {
@@ -80,6 +83,8 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
+  font-family: 'Karla', sans-serif;
+  text-shadow: 0 2px 3px rgba(0,0,0,1);
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
@@ -109,7 +114,7 @@ body {
 {
   vertical-align: middle;
   height: 80%; 
-  width: 80%;
+  width: 95%;
 }
 
 .mainrow {
@@ -119,18 +124,24 @@ body {
 
 
 /*
- * Cover
+ * col1
  */
 
 .col1 {
-  padding: 0 30px;
+  padding: 0px 30px 0px 30px;
   align-items: center;
 }
 .col1 .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
+.welcome {
+  font-size: 300%;
+}
 
+.sub {
+  font-size: 150%;
+}
 
 /*
  * Footer
@@ -152,6 +163,8 @@ body {
     min-height: 100%;
     font-size: 100px;
     text-align: right;
+    font-family: 'Karla', sans-serif;
+    text-shadow: 0 2px 3px rgba(0,0,0,1);
     filter: alpha(opacity=0);
     opacity: 0;
     outline: none;
