@@ -1,4 +1,4 @@
-/*/** {
+/** {
   border: 1px solid red;
 }*/
 
@@ -51,26 +51,22 @@ body {
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
+  padding-top: 40px;
   display: table-cell;
   vertical-align: top;
 }
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
 
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
 
 
 /*
  * Header
  */
 .masthead-brand {
+  font-size: 350%;
   margin-top: 10px;
   margin-bottom: 10px;
+  margin-left: 20px;
+  text-shadow: 2px 2px #bbbbbb;
 }
 
 .masthead-nav > li {
@@ -109,16 +105,28 @@ body {
     float: right;
   }
 }
+.video-js
+{
+  vertical-align: middle;
+  height: 80%; 
+  width: 80%;
+}
+
+.mainrow {
+  height: 75%;
+}
+
 
 
 /*
  * Cover
  */
 
-.cover {
-  padding: 0 20px;
+.col1 {
+  padding: 0 30px;
+  align-items: center;
 }
-.cover .btn-lg {
+.col1 .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
 }
@@ -132,8 +140,25 @@ body {
   color: #999; /* IE8 proofing */
   color: rgba(255,255,255,.5);
 }
-
-
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
 /*
  * Affix and center
  */
@@ -154,16 +179,14 @@ body {
   }
   /* Handle the widths */
   .masthead,
-  .mastfoot,
-  .cover-container {
+  .mastfoot {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
 
 @media (min-width: 992px) {
   .masthead,
-  .mastfoot,
-  .cover-container {
+  .mastfoot {
     width: 95%;
   }
 }

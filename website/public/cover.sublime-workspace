@@ -1,0 +1,361 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Donor",
+				"DonorDatabase"
+			],
+			[
+				"Don",
+				"DonorDatabase"
+			],
+			[
+				"Coin",
+				"CoinList"
+			],
+			[
+				"righ",
+				"right_rotate"
+			],
+			[
+				"to",
+				"to_list"
+			],
+			[
+				"sizeof",
+				"SIZE_OF_INT"
+			],
+			[
+				"motor",
+				"motorRanges"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 89.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build With: Python"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"clean",
+				"Diffy Cleanup"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"preference",
+				"Preferences: Settings"
+			],
+			[
+				"packageres",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"color sch",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"prv:o",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"set syntax: pr",
+				"Set Syntax: SWI-Prolog"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"diff",
+				"Diffy Compare"
+			],
+			[
+				"sync",
+				"SyncScroll: Toggle Current View Scroll Sync"
+			],
+			[
+				"syync",
+				"SyncScroll: Toggle Current View Scroll Sync"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"trim",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"pack",
+				"Install Package Control"
+			],
+			[
+				"rin",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/kimjoe32/Documents/jkim332_HW10/jkim332_hw10.txt",
+		"/Users/kimjoe32/Documents/jkim332_HW10/Hw10.lhs",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/website/public/cover.css",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/website/views/home.ejs",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/website/server.js",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/website/public/request_sender.js",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/website/views/cover.css",
+		"/Users/kimjoe32/Documents/ethno research paper field notes 10:24",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/startbootstrap-sb-admin-2-gh-pages/index.html",
+		"/Users/kimjoe32/Documents/CS480K-Final-Project/startbootstrap-sb-admin-2-gh-pages/pages/index.html",
+		"/Users/kimjoe32/Documents/In this article, I will explore what recourse or a",
+		"/Users/kimjoe32/Documents/CS840K_MiniProj2/answer.txt",
+		"/Users/kimjoe32/Documents/CS840K_MiniProj2/of_tutorial.py",
+		"/Users/kimjoe32/Documents/jkim332_HW7/jkim332_HW7.txt",
+		"/Users/kimjoe32/Documents/jkim332_HW7/test.pl",
+		"/Users/kimjoe32/Documents/Tests/test.rb",
+		"/Users/kimjoe32/Documents/Tests/jkim332_HW7.txt",
+		"/Users/kimjoe32/Documents/Tests/test.c",
+		"/Users/kimjoe32/Documents/Tests/test.s",
+		"/Users/kimjoe32/Downloads/makefile",
+		"/Users/kimjoe32/Downloads/DonorDatabase.h",
+		"/Users/kimjoe32/Downloads/Donor.h",
+		"/Users/kimjoe32/Downloads/CA2.cpp",
+		"/Users/kimjoe32/Downloads/DonorDatabase.cpp",
+		"/Users/kimjoe32/Downloads/Donor.cpp",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/A6E59035-3489-4B17-B6FF-1FD463089DEC/makefile",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/A2306950-D641-444F-A9AC-5347BC7EEA5B/DonorDatabase.h",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/C80E5B8C-3FDC-410D-BC86-586A278CF3B2/Donor.cpp",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/35FBB3AA-201A-4CAE-A5EE-C05A2E44B15A/Donor.h",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/D4DA6201-4048-4FC3-B517-D03C90A8E765/CA2.cpp",
+		"/Users/kimjoe32/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/47F81ACB-7DF7-46CE-9C1D-77599F036ECB/DonorDatabase.cpp",
+		"/Users/kimjoe32/Documents/CS840K_MiniProj2/binary_tree.py",
+		"/Users/kimjoe32/google-cloud-sdk/install.sh",
+		"/Users/kimjoe32/Documents/jkim332_HW5/hw5.pl",
+		"/Users/kimjoe32/Documents/jkim332_HW5.tar.gz",
+		"/Users/kimjoe32/Documents/jkim332_HW5/Notes From Lab pl",
+		"/Users/kimjoe32/Documents/import sys.py",
+		"/Users/kimjoe32/Documents/cursor project.py",
+		"/Users/kimjoe32/nul",
+		"/Users/kimjoe32/#.emacs#",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Packages/Prolog/Comments.tmPreferences",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Packages/Prolog/Prolog.sublime-build",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Packages/Prolog/messages.json",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Cache/Prolog/support/ECLiPSe Prolog.tmLanguage.cache",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Cache/Prolog/support/Prolog.tmLanguage.rcache",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Cache/Prolog/support/Prolog.tmLanguage.cache",
+		"/Users/kimjoe32/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/kimjoe32/Documents/robot-arm/robotArm.ino",
+		"/Users/kimjoe32/Downloads/google-cloud-sdk/install.bat"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 113.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 263.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "cover.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 82.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
