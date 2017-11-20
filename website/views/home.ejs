@@ -32,6 +32,14 @@
             	<a href="#">Home</a>
             </li>
 
+            <li class = "active">
+              <a href="#">About</a>
+            </li>
+
+            <li class = "active">
+              <a href="#">BoNB</a>
+            </li>
+
             <li class="active">
             	<a href="https://github.com/kimjoe32/CS480K-Final-Project">Github</a>
             </li>
@@ -39,22 +47,27 @@
         </div>
 
         <div class = "row mainrow">
-          <div class="col-md-4 col1" align="center">
+          <div class="col-md-4 col1" align="left">
             <h1 class="text-left welcome">Welcome</h1>
-            <p class="text-left sub">This is a project for CS480K: Advanced Topics in Cloud Computing.</p>
-            <p class="text-left sub">Upload a video file, and it will return a video with demarcated faces</p>
-            <p class="text-left sub">Note: put a better description here</p>
-            <label class="btn btn-default btn-file">
-						    Upload File <input type="file" style="display: none;">
-						</label>
+            <p class="text-left sub">This is a project for CS480K: Advanced Topics in Cloud Computing.
+            Upload a video file, and it will return a video with demarcated faces
+            Note: put a better description here</p>
+            <!-- <input type="file" name="Choose File" id="myFile" size="50"> -->
+            <label class="custom-file">
+              <input type="file" name="Choose File" id="video-file" class="custom-file-input">
+              <span class="custom-file-control"></span>
+            </label>
             <!-- <label class="custom-file">
 						  <input type="file" id="file2" class="custom-file-input">
 						  <span class="custom-file-control"></span>
 						</label> -->
+            <input class="btn btn-primary upload-btn" type="button" id="upload-btn" value="Upload">
+            <p id="demo"></p>
           </div>
 
           <div class = "col-md-8 col2" align="center">
-            <video id="my-video" class="video-js" controls preload="auto" data-setup="{}"> <!--  poster="MY_VIDEO_POSTER.jpg"-->
+            <video id="my-video" class="video-js" controls preload="auto" data-setup="{}"> 
+              <!--  poster="MY_VIDEO_POSTER.jpg"-->
               <!-- <source src="MY_VIDEO.mp4" type='video/mp4'>
               <source src="MY_VIDEO.webm" type='video/webm'> -->
               <p class="vjs-no-js">
@@ -66,6 +79,7 @@
           <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
         </div>
 
+        <!-- can probably delete this but never know -->
         <div class="mastfoot">
           <div class="inner">
           </div>
@@ -77,6 +91,16 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var uploadEventListener = document.getElementById("upload-btn");
+      uploadEventListener.addEventListener("click", uploadFile, false);
+
+      function uploadFile() 
+      {
+        var x = document.getElementById("video-file").value;
+        $('#demo').html(x);
+      }
+    </script>
   </body>
 
 </html>
