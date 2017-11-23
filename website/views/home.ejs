@@ -96,9 +96,31 @@
           <script src="http://vjs.zencdn.net/6.2.8/video.js"></script>
         </div>
 
-        <!-- can probably delete this but never know -->
-        <div class="mastfoot">
-          <div class="inner">
+        <div class="mastfoot footer">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th>Estimated Time</th>
+                  <th>Cores Still Computing</th>
+                  <th>Cores Finished</th>
+                  <th>File Size</th>
+                  <th>Estimated New File Size</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td id="estime">--</td>
+                  <td id="coresStillComputing">--</td>
+                  <td id="coresFinished">--</td>
+                  <td id="fileSize">--</td>
+                  <td id="estNewSize">--</td>
+                </tr>
+              </tbody>
+            </table>
+
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
         </div>
       </div>
@@ -113,7 +135,7 @@
 
     <script type="text/javascript">
       var uploadEventListener = document.getElementById("upload-btn");
-      uploadEventListener.addEventListener("click", uploadFile, false);
+      uploadEventListener.addEventListener("click", processJSONObject, false);
 
       var numberOfCores;
       function uploadFile() 
@@ -131,6 +153,24 @@
       {
         numberOfCores = $(this).text();
       });
+
+      function processJSONObject() 
+      {
+        $("#estime").html("122" + "s");
+        $("#coresStillComputing").html("122" + " cores");
+        $("#coresFinished").html("122" + " cores");
+        $("#fileSize").html("122" + "mb");
+        $("#estNewSize").html("122" + "mb");
+      }
+
+      function clearData()
+      {
+        $("#estime").html("--");
+        $("#coresStillComputing").html("--");
+        $("#coresFinished").html("--");
+        $("#fileSize").html("--");
+        $("#estNewSize").html("--");
+      }
     </script>
   </body>
 
