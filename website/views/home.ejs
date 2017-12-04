@@ -52,34 +52,34 @@
             Upload a video file, and it will return a video with demarcated faces
             Note: put a better description here</p>
 
-            <!-- <input type="file" name="Choose File" id="myFile" size="50"> -->
-            <label class="custom-file">
-              <input type="file" name="Choose File" id="video-file" class="custom-file-input">
+            <!-- upload video -->
+            <form method="post" action="/upload" class="custom-file" enctype="multipart/form-data">
+              <input type="file" name="video-file" class="custom-file-input" />
               <span class="custom-file-control"></span>
-            </label>
-            <!-- <label class="custom-file">
-						  <input type="file" id="file2" class="custom-file-input">
-						  <span class="custom-file-control"></span>
-						</label> -->
 
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" 
-                      type="button" 
-                      id="dropdownMenuButton" 
-                      data-toggle="dropdown" 
-                      aria-haspopup="true" 
-                      aria-expanded="false">
-                Number of Cores (optional)
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item">1</a>
-                <a class="dropdown-item">2</a>
-                <a class="dropdown-item">3</a>
+              <!-- optional dropdown to specify number of cores -->
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" 
+                        type="button" 
+                        id="dropdownMenuButton" 
+                        data-toggle="dropdown" 
+                        aria-haspopup="true" 
+                        aria-expanded="false"
+                        name="number-of-cores">
+                  Use all Cores
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item">Use all Cores</a>
+                  <a class="dropdown-item">Use one Core</a>
+                </div>
               </div>
-            </div>
 
-            <input class="btn btn-primary upload-btn" type="button" id="upload-btn" value="Upload">
-            <p id="filePath"></p>
+              <!-- upload button -->
+              <input class="btn btn-primary upload-btn" type="submit" id="upload-btn" value="Upload">
+            </form>
+            <div class="messages"> 
+              <p id="errorMessage"></p>
+            </div>
           </div>
 
           <div class = "col-md-8 col2" align="center">
@@ -137,21 +137,34 @@
       var uploadEventListener = document.getElementById("upload-btn");
       uploadEventListener.addEventListener("click", processJSONObject, false);
 
-      var numberOfCores;
-      function uploadFile() 
-      {
-        //get the filepath
-        var filepath = $("#video-file").val();
-        // $('#filePath').html(filepath);
+      $(function() {
+        $(document).on('submit', 'form.custom-file', function(e) {
+          e.preventDefault();
+          $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            dataType : "application/json; charset=utf-8",
+            data: $(this).serialize(),
+            success: function (response) { 
+              $("#errorMessage").html("* file successfully opened");
+              console.log('successfully uploaded', response);
+            },
+            error: function (result) {
+              $("#errorMessage").html("* Incorrect file/no file given");
+              console.log('coudn\'t upload');
+            }
+          });
+          return false;
+        });
+      });
 
-        //get the number of cores
-        // $('#filePath').html(numberOfCores);
-      }
+      var numberOfCores;
 
       //event for number of cores dropdown option
       $('.dropdown-item').click(function() 
       {
         numberOfCores = $(this).text();
+        $("#dropdownMenuButton").html(numberOfCores);
       });
 
       function processJSONObject() 
@@ -171,8 +184,27 @@
         $("#fileSize").html("--");
         $("#estNewSize").html("--");
       }
+
+      let pollingTimer = null;
+      let isPolling = false;
+      let currentJobId = 0;
+      let currentProgress = 0;
+
+      function startPollingForProgress() {
+        isPolling = true;
+        pollingTimer = setInterval(() => {
+          if (isPolling == false) clearInterval(pollingTimer);
+
+          $.ajax({
+            url: "/progress/" + currentJobId,
+            success: (response) => {
+              //update webage here
+            }
+          });
+
+        }, 1000);
+      }
     </script>
   </body>
-
 </html>
 

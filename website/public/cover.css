@@ -147,6 +147,10 @@ body {
   background-color : #bbbbbb;
 }
 
+#errorMessage {
+  color: #FF0000FF;
+}
+
 .demo {
   margin-top: 5px;
   background-color: #ffffff;
@@ -154,6 +158,14 @@ body {
 
 .footer {
   position: absolute;
+}
+
+#dropdownMenuButton {
+  min-width: 50%;
+}
+
+.messages {
+  padding-top: 10px;
 }
 /*
  * Affix and center
