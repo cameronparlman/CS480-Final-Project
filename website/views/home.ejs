@@ -134,28 +134,15 @@
     <script src="/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-      var uploadEventListener = document.getElementById("upload-btn");
-      uploadEventListener.addEventListener("click", processJSONObject, false);
-
       $(function() {
-        $(document).on('submit', 'form.custom-file', function(e) {
-          e.preventDefault();
-          $.ajax({
-            type: $(this).attr('method'),
-            url: $(this).attr('action'),
-            dataType : "application/json; charset=utf-8",
-            data: $(this).serialize(),
-            success: function (response) { 
-              $("#errorMessage").html("* file successfully opened");
-              console.log('successfully uploaded', response);
-            },
-            error: function (result) {
-              $("#errorMessage").html("* Incorrect file/no file given");
-              console.log('coudn\'t upload');
-            }
-          });
-          return false;
+        var params = {};
+        $.each(window.location.search.substring(1).split('&'), function(i, pair) {
+          var splitPair = pair.split('=');
+          params[splitPair[0]] = splitPair[1];
         });
+        if ("message" in params) {
+          $("#errorMessage").text(params.message);
+        }
       });
 
       var numberOfCores;
