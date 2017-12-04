@@ -1,0 +1,3 @@
+gs://bingcloudfacerec/new/
+gs://bingcloudfacerec/new/small.mp4
+gs://bingcloudfacerec/new/small2.mp4
