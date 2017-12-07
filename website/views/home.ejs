@@ -83,8 +83,7 @@
           </div>
 
           <div class = "col-md-8 col2" align="center">
-            <video id="my-video" class="video-js" controls preload="auto" data-setup="{}"> 
-              <source src="" type='video/avi'>
+            <video id="my-video" class="video-js vjs-big-play-centered" controls preload="none" data-setup="{}"> 
               <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -95,28 +94,6 @@
         </div>
 
         <div class="mastfoot footer">
-          <table class="table">
-              <thead>
-                <tr>
-                  <th>Estimated Time</th>
-                  <th>Cores Still Computing</th>
-                  <th>Cores Finished</th>
-                  <th>File Size</th>
-                  <th>Estimated New File Size</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td id="estime">--</td>
-                  <td id="coresStillComputing">--</td>
-                  <td id="coresFinished">--</td>
-                  <td id="fileSize">--</td>
-                  <td id="estNewSize">--</td>
-                </tr>
-              </tbody>
-            </table>
-
           <div class="progress">
             <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
@@ -139,7 +116,15 @@
           params[splitPair[0]] = splitPair[1];
         });
         if ("message" in params) {
-          $("#errorMessage").text(params.message.split("%20").join(" "));
+          var msg = params.message.split("%20").join(" ")
+          console.log(msg);
+          $("#errorMessage").text(msg);
+          if (!msg.includes('NOT')) {
+            // startPollingForProgress();
+          }
+          else {
+            console.log("failed to start polling");
+          }
         }
       });
 
@@ -152,24 +137,6 @@
         $("#dropdownMenuButton").html(numberOfCores);
       });
 
-      function processJSONObject() 
-      {
-        $("#estime").html("122" + "s");
-        $("#coresStillComputing").html("122" + " cores");
-        $("#coresFinished").html("122" + " cores");
-        $("#fileSize").html("122" + "mb");
-        $("#estNewSize").html("122" + "mb");
-      }
-
-      function clearData()
-      {
-        $("#estime").html("--");
-        $("#coresStillComputing").html("--");
-        $("#coresFinished").html("--");
-        $("#fileSize").html("--");
-        $("#estNewSize").html("--");
-      }
-
       let pollingTimer = null;
       let isPolling = false;
       let currentJobId = 0;
@@ -179,14 +146,14 @@
         isPolling = true;
         pollingTimer = setInterval(() => {
           if (isPolling == false) clearInterval(pollingTimer);
-
           $.ajax({
-            url: "/progress/" + currentJobId,
+            url: "/finishedVideos/",
             success: (response) => {
-              //update webage here
+              videojs("my_video").src([
+                { type: response.type, src: response.src }
+              ]);
             }
           });
-
         }, 1000);
       }
     </script>
