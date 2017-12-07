@@ -117,7 +117,7 @@
         });
         if ("message" in params) {
           var msg = params.message.split("%20").join(" ")
-          console.log(msg);
+          // console.log(msg);
           $("#errorMessage").text(msg);
           if (!msg.includes('NOT')) {
             // startPollingForProgress();
