@@ -29,19 +29,6 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('video-file'), function(req, res, next) {
 	if (!req.file) return next(ERR_NO_FILE);
 	res.redirect('/?error=false&message=' + SUCCESS);
-
-
-	/*
- 	console.log(req.file);
- 	console.log(req.params);
- 	if (req.file) {
-	    console.log("successfully received");
-	    return res.send({success: "success"});
-	}
-	console.log("received wrong file");
-	res.status(500).send("received wrong file");
-	return res.end();
-	*/
 });
 
 app.use(function(err, req, res, next) {
@@ -49,7 +36,3 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000, () => console.log('Listening on Port 3000.'));
-
-//websocket javascript
-//setinterval thread, poll
-//javascript nad jquery to updatemarkup
