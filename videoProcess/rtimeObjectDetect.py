@@ -1,5 +1,5 @@
 # import the necessary packages
-from imutils.video import VideoStream
+from imutils.video import FileVideoStream
 from imutils.video import FPS
 import face_recognition
 import numpy as np
@@ -8,6 +8,7 @@ import imutils
 import time
 import cv2
 import multiprocessing
+import sys
 
 label = ""
 # initialize the list of class labels MobileNet SSD was trained to
@@ -24,12 +25,11 @@ output = None
 # load our serialized model from disk
 net = cv2.dnn.readNetFromCaffe("MobileNetSSD_deploy.prototxt.txt", "MobileNetSSD_deploy.caffemodel");
  
-vs = VideoStream(0).start();
+vs = FileVideoStream(sys.argv[1]).start();
 time.sleep(2.0)
 
 # loop over the frames from the video stream
-while True:
-	print(multiprocessing.cpu_count());
+while vs.more():
 	frame = vs.read()
 
 	# grab the frame dimensions and convert it to a blob
