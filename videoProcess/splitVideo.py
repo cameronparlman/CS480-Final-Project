@@ -5,7 +5,7 @@ import sys
 def getLength(filename):
   result = subprocess.Popen(['ffprobe', filename],
     stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
-  return [x for x in result.stdout.readlines() if bytes("Duration") in x]
+  return [x for x in result.stdout.readlines() if bytes("Duration", "utf-8") in x]
 
 videoInfo = getLength(sys.argv[1]);
 firstVideoInfo = videoInfo[0].decode("utf-8");
