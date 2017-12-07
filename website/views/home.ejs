@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Video Facial Recognizer</title>
-    
+
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/cover.css" rel="stylesheet">
     <link href="http://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
@@ -84,9 +84,7 @@
 
           <div class = "col-md-8 col2" align="center">
             <video id="my-video" class="video-js" controls preload="auto" data-setup="{}"> 
-              <!--  poster="MY_VIDEO_POSTER.jspg"-->
-              <!-- <source src="MY_VIDEO.mp4" type='video/mp4'>
-              <source src="MY_VIDEO.webm" type='video/webm'> -->
+              <source src="" type='video/avi'>
               <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                 <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -141,7 +139,7 @@
           params[splitPair[0]] = splitPair[1];
         });
         if ("message" in params) {
-          $("#errorMessage").text(params.message);
+          $("#errorMessage").text(params.message.split("%20").join(" "));
         }
       });
 

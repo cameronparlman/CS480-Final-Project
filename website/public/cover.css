@@ -133,11 +133,12 @@ body {
   color: rgba(255,255,255,.5);
 }
 
-#video-file {
-  font-size: 20px;
-  font-family: 'Karla', sans-serif;
-  text-align: right; 
+.btn-file {
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    text-align: right; 
 }
+
 .upload-btn {
   margin-top:5px;
   border-color:#ffffff;
