@@ -97,7 +97,7 @@ body {
     float: right;
   }
 }
-.video-js
+#videoPlayer
 {
   vertical-align: middle;
   height: 80%; 
