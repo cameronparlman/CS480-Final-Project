@@ -1,7 +1,5 @@
 # import the necessary packages
 from imutils.video import FileVideoStream
-from imutils.video import FPS
-import face_recognition
 import numpy as np
 import argparse
 import imutils
@@ -9,6 +7,8 @@ import time
 import cv2
 import multiprocessing
 import sys
+import timeit
+import csv
 
 label = ""
 # initialize the list of class labels MobileNet SSD was trained to
@@ -24,24 +24,27 @@ counter = 0
 output = None
 # load our serialized model from disk
 net = cv2.dnn.readNetFromCaffe("MobileNetSSD_deploy.prototxt.txt", "MobileNetSSD_deploy.caffemodel");
- 
+
+# Create file video Stream and open the video file
 vs = FileVideoStream(sys.argv[1]).start();
 time.sleep(2.0)
-
+#start the timer to callculate how long the video took
+start = timeit.default_timer();
 # loop over the frames from the video stream
 while vs.more():
 	frame = vs.read()
 
 	# grab the frame dimensions and convert it to a blob
 	(h, w) = frame.shape[:2]	
-
-	if output is None:
-		output = cv2.VideoWriter('output.AVI', cv2.VideoWriter_fourcc(*'MJPG'), 10.0, (w,h), True)	
 	
-# grab the frame from the threaded video stream and resize it
-	# to have a maximum width of 400 pixels
+	#Create video Writer to output the Video to
+	if output is None:
+		output = cv2.VideoWriter(str(sys.argv[1]), cv2.VideoWriter_fourcc(*'MJPG'), 10.0, (w,h), True)	
+		
+	#Skip every 5th frame as a frame does not change by that much 
 	if counter%5 == 0:	
-	 
+		# grab the frame from the threaded video stream and resize it
+		# to have a maximum width of 300 pixels 
 		blob = cv2.dnn.blobFromImage(cv2.resize(frame, (300, 300)),
 			0.007843, (300, 300), 127.5)
 
@@ -86,7 +89,12 @@ while vs.more():
 			break
 	 
 	counter+=1
- 
+#stop the video timer and get the time taken to process video
+stop = timeit.default_timer();
+#Open a text file and write the time taken for the object Detection Algorithm
+with open('timeTaken', 'w', newline='') as csvfile:
+	spamwriter = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+	spamwriter.writerow(['Time Taken', str(stop-start), 'seconds', '\n']);
 # do a bit of cleanup
 cv2.destroyAllWindows()
 vs.stop()
