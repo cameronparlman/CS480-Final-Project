@@ -13,7 +13,6 @@
 
     <link href="/bootstrap.min.css" rel="stylesheet">
     <link href="/cover.css" rel="stylesheet">
-    <link href="http://vjs.zencdn.net/6.2.8/video-js.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -82,6 +81,7 @@
             </div>
           </div>
 
+          <!-- video player -->
           <div class = "col-md-8 col2" align="center">
             <video id="videoPlayer" controls>
               <source src="" type="video/mp4">
@@ -89,10 +89,8 @@
           </div>
         </div>
 
+        <!-- footer in case I need it later -->
         <div class="mastfoot footer">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -107,15 +105,20 @@
     <script type="text/javascript">
       $(function() {
         var params = {};
+        //parse the URL parameters
         $.each(window.location.search.substring(1).split('&'), function(i, pair) {
           var splitPair = pair.split('=');
           params[splitPair[0]] = splitPair[1];
         });
+
+        //check if the server didn't/did accept the file
         if ("message" in params) {
           var msg = params.message.split("%20").join(" ")
           // console.log(msg);
           $("#errorMessage").text(msg);
           if (!msg.includes('NOT')) {
+            //if file was accepted, start pinging the server for
+            // a processed video
             startPollingForProgress();
           }
           else {
@@ -129,6 +132,7 @@
       //event for number of cores dropdown option
       $('.dropdown-item').click(function() 
       {
+        //add form data for amount of cores multiform/data send
         numberOfCores = $(this).text();
         $("#dropdownMenuButton").html(numberOfCores);
       });
@@ -142,17 +146,21 @@
         isPolling = true;
         pollingTimer = setInterval(() => {
           if (isPolling == false) clearInterval(pollingTimer);
+          //send ajax request to server
           $.ajax({
             url: "/finishedVideos/",
             success: (response) => {
               console.log("received response: " + response);
+              //if server responds that the file is available for sending
               if (response.fileAvailable)
               {
                 console.log("received file");
+                //set video source of the video player
                 var videoSource = "http://localhost:3000/finishedVideos/" + response.src;
                 console.log(videoSource);
                 $('#videoPlayer').attr('src', videoSource);
                 $("#videoPlayer").load();
+                //stop polling, since we received a processed video
                 clearInterval(pollingTimer);
               }
             }
