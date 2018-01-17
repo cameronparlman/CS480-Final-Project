@@ -18,3 +18,6 @@ Once a video is sent in, the server will split the video in N segments (3 in our
 The N segments will get sent to N cloud cores. Those cores will do the facial recognition computation.
 The cores will send back the computed video segments back to the server.
 The server pieces back the video and sends it back to the client's page.
+
+
+![alt text](https://github.com/kimjoe32/CS480K-Final-Project/blob/master/project%20design.jpg)
