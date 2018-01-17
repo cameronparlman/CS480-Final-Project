@@ -1,9 +1,9 @@
 # A video facial recognizer using:
-* opencv for facial recognition
-* nodejs/express for the website
-* ffmpeg for video manipulation
-* google cloud for the server/computation
-* languages:
+* Opencv for facial recognition
+* Nodejs/express for the website
+* Ffmpeg for video manipulation
+* Google Cloud for the server/computation
+* Languages:
   * c++, python, javascript, html, css, bash
 
 # Instructions:
