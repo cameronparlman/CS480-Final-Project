@@ -7,7 +7,7 @@
   * c++, python, javascript, html, css, bash
 
 # Instructions:
-The user will upload an mp4 video to the server. Once processing has finished, the video will automatically be playable in the (dynamic) website. The video will have boxes outlined around faces
+The user uploads an mp4 video to the server. Once processing has finished, the video will automatically be playable in the (dynamic) website. The video will have boxes outlined around faces
 1. Upload video
 2. Wait
 3. Play video with facial recognition
